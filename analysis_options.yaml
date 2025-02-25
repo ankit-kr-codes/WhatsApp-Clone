@@ -1,0 +1,19 @@
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    - prefer_const_constructors
+    - prefer_final_fields
+    - avoid_print
+    - avoid_unnecessary_containers
+    - use_key_in_widget_constructors
+    # - always_specify_types
+    - avoid_empty_else
+    - avoid_redundant_argument_values
+    - avoid_single_cascade_in_expression_statements
+    - unnecessary_const
+    - prefer_const_declarations
+    - unnecessary_final
+    - unnecessary_late
+    - always_declare_return_types
+    - avoid_void_async
