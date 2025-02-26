@@ -1,4 +1,4 @@
-import 'package:whatsapp_clone/features/Home/domain/user_model.dart';
+import 'package:whatsapp_clone/features/Chat/domain/user_model.dart';
 
 List<User> userList = [
   User(

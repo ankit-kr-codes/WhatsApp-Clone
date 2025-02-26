@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/core/theme.dart';
-import 'package:whatsapp_clone/features/Home/data/user_data.dart';
-import 'package:whatsapp_clone/features/Home/domain/filters.dart';
+import 'package:whatsapp_clone/features/Chat/data/user_data.dart';
+import 'package:whatsapp_clone/features/Chat/domain/filters.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class Chat extends StatefulWidget {
+  const Chat({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<Chat> createState() => _ChatState();
 }
 
-class _HomeState extends State<Home> {
+class _ChatState extends State<Chat> {
   late String selectedFilter;
 
   @override
@@ -24,50 +24,53 @@ class _HomeState extends State<Home> {
     Size mediaQuery = MediaQuery.of(context).size;
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.white,
-        surfaceTintColor: AppColors.white,
-        title: const Text(
-          "WhatsApp",
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            color: AppColors.primaryGreen,
-            fontSize: 24,
-          ),
-        ),
-        actions: [
-          const Icon(Icons.qr_code, size: 24),
-          const SizedBox(width: 25),
-          const Icon(Icons.camera_alt_outlined, size: 24),
-          const SizedBox(width: 25),
-          const Icon(Icons.more_vert, size: 24),
-          const SizedBox(width: 10),
-        ],
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: AppColors.white,
+      //   surfaceTintColor: AppColors.white,
+      //   title: const Text(
+      //     "WhatsApp",
+      //     style: TextStyle(
+      //       fontWeight: FontWeight.w600,
+      //       color: AppColors.primaryGreen,
+      //       fontSize: 24,
+      //     ),
+      //   ),
+      //   actions: [
+      //     const Icon(Icons.qr_code, size: 24),
+      //     const SizedBox(width: 25),
+      //     const Icon(Icons.camera_alt_outlined, size: 24),
+      //     const SizedBox(width: 25),
+      //     const Icon(Icons.more_vert, size: 24),
+      //     const SizedBox(width: 10),
+      //   ],
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
           physics: const ClampingScrollPhysics(),
           children: [
-            TextField(
-              decoration: InputDecoration(
-                prefixIcon: const Padding(
-                  padding: EdgeInsets.only(left: 25, right: 5),
-                  child: Icon(Icons.search),
-                ),
-                hintText: "Search...",
-                fillColor: AppColors.grey,
-                hoverColor: AppColors.grey,
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(40),
-                  borderSide: BorderSide.none,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: TextField(
+                decoration: InputDecoration(
+                  prefixIcon: const Padding(
+                    padding: EdgeInsets.only(left: 25, right: 5),
+                    child: Icon(Icons.search),
+                  ),
+                  hintText: "Search...",
+                  fillColor: AppColors.grey,
+                  hoverColor: AppColors.grey,
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(40),
+                    borderSide: BorderSide.none,
+                  ),
                 ),
               ),
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 25),
             SizedBox(
-              height: 40,
+              height: 30,
               child: ListView.builder(
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
@@ -109,8 +112,7 @@ class _HomeState extends State<Home> {
                 },
               ),
             ),
-
-            const SizedBox(height: 30),
+            const SizedBox(height: 25),
 
             ListView.builder(
               physics: const NeverScrollableScrollPhysics(),
@@ -192,36 +194,6 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        enableFeedback: false,
-        useLegacyColorScheme: false,
-        selectedItemColor: AppColors.primaryGreen,
-        unselectedLabelStyle: const TextStyle(color: AppColors.black),
-        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
-        unselectedItemColor: AppColors.darkGrey,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-
-        // iconSize: 30,
-        items: [
-          const BottomNavigationBarItem(
-            label: "Chats",
-            icon: Icon(Icons.chat_outlined),
-          ),
-          const BottomNavigationBarItem(
-            label: "Updates",
-            icon: Icon(Icons.donut_large),
-          ),
-          const BottomNavigationBarItem(
-            label: "Communities",
-            icon: Icon(Icons.groups_outlined),
-          ),
-          const BottomNavigationBarItem(
-            label: "Calls",
-            icon: Icon(Icons.call_outlined),
-          ),
-        ],
       ),
     );
   }
