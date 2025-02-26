@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 import 'package:go_router/go_router.dart';
 import 'package:whatsapp_clone/core/theme.dart';
 import 'package:whatsapp_clone/features/Calls/presentation/calls.dart';
 import 'package:whatsapp_clone/features/Chat/presentation/chat.dart';
 import 'package:whatsapp_clone/features/Communities/presentation/communities.dart';
-import 'dart:ui';
-
 import 'package:whatsapp_clone/features/Update/presentation/updates.dart';
 
 void main() {
@@ -20,7 +19,7 @@ class MyApp extends StatelessWidget {
     routes: [
       ShellRoute(
         builder: (context, state, child) {
-          return AppShell(child: child); // Persistent Layout
+          return AppShell(child: child);
         },
         routes: [
           GoRoute(path: "/chats", builder: (context, state) => const Chat()),
@@ -50,6 +49,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(
           seedColor: AppColors.primaryGreen,
           surface: AppColors.white,
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: AppColors.littleDarkGreen,
+          foregroundColor: AppColors.white,
         ),
         fontFamily: "Helvetica",
       ),
@@ -101,6 +104,7 @@ class _AppShellState extends State<AppShell> {
 
           const SizedBox(width: 10),
           const Icon(Icons.more_vert, size: 24),
+          const SizedBox(width: 10),
         ],
       ),
       body: widget.child,
@@ -138,6 +142,23 @@ class _AppShellState extends State<AppShell> {
           ),
         ],
       ),
+      floatingActionButton:
+          (_selectedIndex == 0)
+              ? FloatingActionButton(
+                onPressed: () {},
+                child: const Icon(Icons.message_rounded),
+              )
+              : (_selectedIndex == 1)
+              ? FloatingActionButton(
+                onPressed: () {},
+                child: const Icon(Icons.add_a_photo_rounded),
+              )
+              : (_selectedIndex == 3)
+              ? FloatingActionButton(
+                onPressed: () {},
+                child: const Icon(Icons.add_call),
+              )
+              : null,
     );
   }
 }

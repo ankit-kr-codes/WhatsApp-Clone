@@ -32,6 +32,8 @@ flutter:
   assets:
     - assets/image/
     - assets/image/Users/
+    - assets/image/Status/
+    - assets/image/Channels/
 
   fonts:
     - family: Helvetica

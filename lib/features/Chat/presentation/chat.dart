@@ -24,26 +24,6 @@ class _ChatState extends State<Chat> {
     Size mediaQuery = MediaQuery.of(context).size;
 
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: AppColors.white,
-      //   surfaceTintColor: AppColors.white,
-      //   title: const Text(
-      //     "WhatsApp",
-      //     style: TextStyle(
-      //       fontWeight: FontWeight.w600,
-      //       color: AppColors.primaryGreen,
-      //       fontSize: 24,
-      //     ),
-      //   ),
-      //   actions: [
-      //     const Icon(Icons.qr_code, size: 24),
-      //     const SizedBox(width: 25),
-      //     const Icon(Icons.camera_alt_outlined, size: 24),
-      //     const SizedBox(width: 25),
-      //     const Icon(Icons.more_vert, size: 24),
-      //     const SizedBox(width: 10),
-      //   ],
-      // ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
@@ -130,19 +110,58 @@ class _ChatState extends State<Chat> {
                             context: context,
                             builder: (context) {
                               return Dialog(
-                                backgroundColor: Colors.transparent,
-                                child: InteractiveViewer(
-                                  panEnabled: false,
-                                  minScale: 0.5,
-                                  maxScale: 2,
-                                  child: SizedBox(
-                                    width: 350,
-                                    height: 350,
-                                    child: Image.asset(
-                                      userList[index].imagePath,
-                                      fit: BoxFit.cover,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Stack(
+                                      children: [
+                                        ClipRRect(
+                                          child: Image.asset(
+                                            userList[index].imagePath,
+                                            height: 350,
+                                            width: double.maxFinite,
+                                            fit: BoxFit.contain,
+                                          ),
+                                        ),
+                                        Container(
+                                          height: 45,
+                                          width: double.infinity,
+                                          color: AppColors.semiTransparent,
+                                          alignment: Alignment.centerLeft,
+                                          padding: const EdgeInsets.only(
+                                            left: 20,
+                                          ),
+                                          child: Text(
+                                            userList[index].name,
+                                            style: const TextStyle(
+                                              color: AppColors.white,
+                                              fontSize: 18,
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
-                                  ),
+                                    Container(
+                                      height: 60,
+                                      color: AppColors.white,
+                                      child: const Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          Icon(
+                                            Icons.message_outlined,
+                                            color: AppColors.primaryGreen,
+                                            size: 28,
+                                          ),
+                                          Icon(
+                                            Icons.info_outline_rounded,
+                                            color: AppColors.primaryGreen,
+                                            size: 28,
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               );
                             },
