@@ -1,0 +1,77 @@
+import 'package:whatsapp_clone/features/Calls/domain/recent_calls.dart';
+import 'package:whatsapp_clone/features/Chat/data/user_data.dart';
+
+List<RecentCalls> recentCallList = [
+  RecentCalls(
+    name: userList[1].name,
+    imagePath: userList[1].imagePath,
+    lastCallStatus: Status.incoming,
+    lastCallType: Type.videoCall,
+    lastCallDate: "10 minutes ago",
+    callAction: Respond.received,
+  ),
+  RecentCalls(
+    name: userList[2].name,
+    imagePath: userList[2].imagePath,
+    lastCallStatus: Status.incoming,
+    lastCallType: Type.voiceCall,
+    lastCallDate: "22 February, 12:08",
+    callAction: Respond.received,
+  ),
+  RecentCalls(
+    name: userList[3].name,
+    imagePath: userList[3].imagePath,
+    lastCallStatus: Status.outgoing,
+    lastCallType: Type.voiceCall,
+    lastCallDate: "21 February, 9:28",
+    callAction: Respond.declined,
+  ),
+  RecentCalls(
+    name: userList[4].name,
+    imagePath: userList[4].imagePath,
+    lastCallStatus: Status.incoming,
+    lastCallType: Type.videoCall,
+    lastCallDate: "18 February, 12:08",
+    callAction: Respond.received,
+  ),
+  RecentCalls(
+    name: userList[5].name,
+    imagePath: userList[5].imagePath,
+    lastCallStatus: Status.outgoing,
+    lastCallType: Type.voiceCall,
+    lastCallDate: "16 February, 17:42",
+    callAction: Respond.received,
+  ),
+  RecentCalls(
+    name: userList[6].name,
+    imagePath: userList[6].imagePath,
+    lastCallStatus: Status.incoming,
+    lastCallType: Type.videoCall,
+    lastCallDate: "15 February, 4:34",
+    callAction: Respond.received,
+  ),
+  RecentCalls(
+    name: userList[7].name,
+    imagePath: userList[7].imagePath,
+    lastCallStatus: Status.incoming,
+    lastCallType: Type.videoCall,
+    lastCallDate: "12 February,23:12",
+    callAction: Respond.declined,
+  ),
+  RecentCalls(
+    name: userList[8].name,
+    imagePath: userList[8].imagePath,
+    lastCallStatus: Status.incoming,
+    lastCallType: Type.voiceCall,
+    lastCallDate: "8 February, 5:12",
+    callAction: Respond.received,
+  ),
+  RecentCalls(
+    name: userList[9].name,
+    imagePath: userList[9].imagePath,
+    lastCallStatus: Status.incoming,
+    lastCallType: Type.voiceCall,
+    lastCallDate: "5 February, 8:09",
+    callAction: Respond.declined,
+  ),
+];

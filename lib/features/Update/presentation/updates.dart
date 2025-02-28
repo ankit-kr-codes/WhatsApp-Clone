@@ -117,6 +117,7 @@ class _UpdatesState extends State<Updates> {
                 ),
               ),
               Wrap(
+                crossAxisAlignment: WrapCrossAlignment.center,
                 children: [
                   Text(
                     "Explore",
