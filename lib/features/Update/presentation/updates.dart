@@ -19,6 +19,7 @@ class _UpdatesState extends State<Updates> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: ListView(
+        cacheExtent: 1000,
         physics: const ClampingScrollPhysics(),
         children: [
           const SizedBox(height: 20),
@@ -35,6 +36,7 @@ class _UpdatesState extends State<Updates> {
           SizedBox(
             height: 200,
             child: ListView.builder(
+              cacheExtent: 1000,
               shrinkWrap: true,
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
@@ -136,6 +138,7 @@ class _UpdatesState extends State<Updates> {
           ),
           const SizedBox(height: 20),
           ListView.builder(
+            cacheExtent: 1000,
             shrinkWrap: true,
             physics: const ClampingScrollPhysics(),
             itemCount: channelList.length,
@@ -190,6 +193,7 @@ class _UpdatesState extends State<Updates> {
           ),
           const SizedBox(height: 15),
           ListView.builder(
+            cacheExtent: 1000,
             shrinkWrap: true,
             physics: const ClampingScrollPhysics(),
             itemCount: channelToFollowList.length,

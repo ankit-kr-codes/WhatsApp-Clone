@@ -27,6 +27,7 @@ class _ChatState extends State<Chat> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(
+          cacheExtent: 1000,
           physics: const ClampingScrollPhysics(),
           children: [
             Padding(
@@ -52,6 +53,7 @@ class _ChatState extends State<Chat> {
             SizedBox(
               height: 30,
               child: ListView.builder(
+                cacheExtent: 1000,
                 shrinkWrap: true,
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
@@ -95,6 +97,7 @@ class _ChatState extends State<Chat> {
             const SizedBox(height: 25),
 
             ListView.builder(
+              cacheExtent: 1000,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: userList.length,
               shrinkWrap: true,
