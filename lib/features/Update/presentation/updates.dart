@@ -63,6 +63,9 @@ class _UpdatesState extends State<Updates> {
                           borderRadius: BorderRadius.circular(15),
                           child: Image.asset(
                             statusList[index].statusImagePath,
+                            isAntiAlias: true,
+                            gaplessPlayback: true,
+                            filterQuality: FilterQuality.high,
                             fit: BoxFit.cover,
                             height: 200,
                             width: 120,
@@ -84,6 +87,9 @@ class _UpdatesState extends State<Updates> {
                               ClipOval(
                                 child: Image.asset(
                                   statusList[index].profilePicPath,
+                                  isAntiAlias: true,
+                                  gaplessPlayback: true,
+                                  filterQuality: FilterQuality.high,
                                   fit: BoxFit.cover,
                                   height: 50,
                                   width: 50,
@@ -152,6 +158,9 @@ class _UpdatesState extends State<Updates> {
                     ClipOval(
                       child: Image.asset(
                         channelList[index].channelProfilePic,
+                        isAntiAlias: true,
+                        gaplessPlayback: true,
+                        filterQuality: FilterQuality.high,
                         fit: BoxFit.cover,
                         height: 60,
                         width: 60,
@@ -207,6 +216,9 @@ class _UpdatesState extends State<Updates> {
                     ClipOval(
                       child: Image.asset(
                         channelToFollowList[index].channelProfilePic,
+                        isAntiAlias: true,
+                        gaplessPlayback: true,
+                        filterQuality: FilterQuality.high,
                         fit: BoxFit.cover,
                         height: 60,
                         width: 60,
@@ -361,6 +373,9 @@ class _StatusViewState extends State<StatusView>
           alignment: Alignment.center,
           child: Image.asset(
             widget.status.statusImagePath,
+            isAntiAlias: true,
+            gaplessPlayback: true,
+            filterQuality: FilterQuality.high,
             fit: BoxFit.contain,
           ),
         ),

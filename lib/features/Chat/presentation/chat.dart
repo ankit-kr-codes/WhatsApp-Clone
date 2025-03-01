@@ -121,6 +121,9 @@ class _ChatState extends State<Chat> {
                                         ClipRRect(
                                           child: Image.asset(
                                             userList[index].imagePath,
+                                            isAntiAlias: true,
+                                            gaplessPlayback: true,
+                                            filterQuality: FilterQuality.high,
                                             height: 350,
                                             width: double.maxFinite,
                                             fit: BoxFit.contain,
@@ -178,6 +181,9 @@ class _ChatState extends State<Chat> {
                             child: Image.asset(
                               userList[index].imagePath,
                               fit: BoxFit.cover,
+                              isAntiAlias: true,
+                              gaplessPlayback: true,
+                              filterQuality: FilterQuality.high,
                               height: 60,
                               width: 60,
                             ),

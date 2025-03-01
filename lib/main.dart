@@ -8,34 +8,123 @@ import 'package:whatsapp_clone/features/Communities/presentation/communities.dar
 import 'package:whatsapp_clone/features/Update/presentation/updates.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  static final GlobalKey<NavigatorState> rootNavigatorKey =
+      GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> shellNavigatorKey =
+      GlobalKey<NavigatorState>();
+
   static final GoRouter _router = GoRouter(
+    navigatorKey: rootNavigatorKey,
     initialLocation: "/chats",
     routes: [
       ShellRoute(
+        navigatorKey: shellNavigatorKey,
+        observers: [HeroController()],
         builder: (context, state, child) {
           return AppShell(child: child);
         },
         routes: [
-          GoRoute(path: "/chats", builder: (context, state) => const Chat()),
+          GoRoute(
+            path: "/chats",
+            pageBuilder:
+                (context, state) => const NoTransitionPage(child: Chat()),
+          ),
           GoRoute(
             path: "/updates",
-            builder: (context, state) => const Updates(),
+            pageBuilder:
+                (context, state) => const NoTransitionPage(child: Updates()),
           ),
           GoRoute(
             path: "/communities",
-            builder: (context, state) => const Communities(),
+            pageBuilder:
+                (context, state) =>
+                    const NoTransitionPage(child: Communities()),
           ),
-          GoRoute(path: "/calls", builder: (context, state) => const Calls()),
+          GoRoute(
+            path: "/calls",
+            pageBuilder:
+                (context, state) => const NoTransitionPage(child: Calls()),
+          ),
         ],
       ),
     ],
   );
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _preloadImages(context);
+    });
+  }
+
+  void _preloadImages(BuildContext context) {
+    List<String> images = [
+      //Users
+      'assets/image/Users/user1.webp',
+      'assets/image/Users/user2.webp',
+      'assets/image/Users/user3.webp',
+      'assets/image/Users/user4.webp',
+      'assets/image/Users/user5.webp',
+      'assets/image/Users/user6.webp',
+      'assets/image/Users/user7.webp',
+      'assets/image/Users/user8.webp',
+      'assets/image/Users/user9.webp',
+      'assets/image/Users/user10.webp',
+      'assets/image/Users/user11.webp',
+      'assets/image/Users/user12.webp',
+      'assets/image/Users/user13.webp',
+      'assets/image/Users/user14.webp',
+      'assets/image/Users/user15.webp',
+      'assets/image/Users/user16.webp',
+
+      //Status
+      'assets/image/Status/cake.webp',
+      'assets/image/Status/car_deal.webp',
+      'assets/image/Status/google_hq.webp',
+      'assets/image/Status/japan_streets.webp',
+      'assets/image/Status/picnic.webp',
+      'assets/image/Status/plane.webp',
+      'assets/image/Status/school.webp',
+      'assets/image/Status/stadium.webp',
+      'assets/image/Status/streets_of_SF.webp',
+      'assets/image/Status/theater.webp',
+
+      //Channels
+      'assets/image/Channels/amazon.webp',
+      'assets/image/Channels/apple.webp',
+      'assets/image/Channels/bbc.webp',
+      'assets/image/Channels/google.webp',
+      'assets/image/Channels/lg.webp',
+      'assets/image/Channels/linux.webp',
+      'assets/image/Channels/mcdonalds.webp',
+      'assets/image/Channels/mercedes.webp',
+      'assets/image/Channels/meta.webp',
+      'assets/image/Channels/microsoft.webp',
+      'assets/image/Channels/nike.webp',
+      'assets/image/Channels/railway.webp',
+      'assets/image/Channels/samsung.webp',
+      'assets/image/Channels/tata.webp',
+      'assets/image/Channels/tesla.webp',
+      'assets/image/Channels/waymo.webp',
+    ];
+
+    for (String imagePath in images) {
+      precacheImage(AssetImage(imagePath), context);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +145,7 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: "Helvetica",
       ),
-      routerConfig: _router,
+      routerConfig: MyApp._router,
     );
   }
 }
@@ -109,6 +198,7 @@ class _AppShellState extends State<AppShell> {
       ),
       body: widget.child,
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         useLegacyColorScheme: false,
         selectedItemColor: AppColors.primaryGreen,

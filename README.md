@@ -1,16 +1,41 @@
-# WhatsApp Clone
+# WhatsApp Clone - Flutter
 
-A new Flutter project.
+A fully functional **UI clone** of WhatsApp built with Flutter. It includes profile viewing and status viewing features.
 
-## Getting Started
+## Features
+- 🖼️ **Status UI** - View status updates just like WhatsApp.
+- 🎨 **Responsive Design** - Works seamlessly on **mobile, tablet, and desktop**.
+- 📱💻 **Multi-Device Support** - Use it on smartphones, tablets, and laptops with adaptive UI.
 
-This project is a starting point for a Flutter application.
+## Tech Stack
+- **Flutter** - Cross-platform UI development.
+- **Dart** - Programming language for Flutter.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ankit-kr-codes/WhatsApp-Clone.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd whatsapp_clone
+   ```
+3. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+4. Run the app:
+   ```bash
+   flutter run
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screenshots
+| Chat Screen | Updates Screen | Communities Screen | Call Screen |
+|------------|--------------|-------------|-------------|
+| ![Chat](assets/image/Screenshots/chat_screen.png) | ![Updates](assets/image/Screenshots/update_screen_1.png) | ![Communities](assets/image/Screenshots/communities_screen.png) | ![Call](assets/image/Screenshots/call_screen.png) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributing
+Feel free to contribute! Fork the repo, make your changes, and submit a PR.
+
+
+

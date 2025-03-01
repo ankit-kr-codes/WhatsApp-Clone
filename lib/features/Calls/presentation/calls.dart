@@ -53,6 +53,9 @@ class Calls extends StatelessWidget {
                     ClipOval(
                       child: Image.asset(
                         favouritesData[index].imagePath,
+                        isAntiAlias: true,
+                        gaplessPlayback: true,
+                        filterQuality: FilterQuality.high,
                         fit: BoxFit.cover,
                         width: 60,
                         height: 60,
@@ -102,6 +105,9 @@ class Calls extends StatelessWidget {
                     ClipOval(
                       child: Image.asset(
                         recentCallList[index].imagePath,
+                        isAntiAlias: true,
+                        gaplessPlayback: true,
+                        filterQuality: FilterQuality.high,
                         fit: BoxFit.cover,
                         height: 60,
                         width: 60,

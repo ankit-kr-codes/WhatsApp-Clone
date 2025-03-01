@@ -14,4 +14,5 @@ class AppColors {
   static const Color semiTransparent = Color.fromRGBO(0, 0, 0, 0.424);
   static const Color transparent = Color.fromRGBO(0, 0, 0, 0);
   static const Color red = Color.fromRGBO(198, 26, 26, 1);
+  static const Color blue = Color.fromRGBO(26, 118, 198, 1);
 }
